@@ -48,9 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-<body>
+<body class="registro">
 <h2>Registro de Usuarios</h2>
 <form method="POST">
     <input type="text" name="nombre" placeholder="Nombre">

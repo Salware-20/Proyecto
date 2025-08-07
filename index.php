@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="index">
     <?php include 'menu.php';?>
 </body>
 </html>
