@@ -51,14 +51,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="registro">
+    <?php include 'menu.php';?>
 <h2>Registro de Usuarios</h2>
-<form method="POST">
-    <input type="text" name="nombre" placeholder="Nombre">
-    <input type="text" name="apellido" placeholder="Apellido">
-    <input type="email" name="correo" placeholder="Correo">
-    <input type="password" name="clave" placeholder="Contraseña">
-    <input type="password" name="confirmar" placeholder="Confirmar Contraseña">
-    <button type="submit">Registrarse</button>
+<form method="POST" class="registro-form">
+    <input type="text" name="nombre" placeholder="Nombre" class="intput-registro" required>
+    <input type="text" name="apellido" placeholder="Apellido" class="intput-registro" required>
+    <input type="email" name="correo" placeholder="Correo" class="intput-registro" required>
+    <input type="password" name="clave" placeholder="Contraseña" class="intput-registro" required>
+    <input type="password" name="confirmar" placeholder="Confirmar Contraseña" class="intput-registro" required>
+    <button type="submit" class="intput-registro">Registrarse</button>
 </form>
 
 <?php
