@@ -18,14 +18,13 @@ body.registro {
 }
 
 body.login {
-  background-image: url("../imagenes/Libros-estantes.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 /* =====> Estilo para el menu <===== */
@@ -39,6 +38,7 @@ body.login {
   justify-content: space-around;
   color: white;
   font-family: "Playfair Display", serif;
+  z-index: 5;
 }
 
 .titulo a {
@@ -76,12 +76,27 @@ body.login {
 }
 
 /* =====> Estilo para el login <===== */
+.fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("../imagenes/Libros-estantes.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  filter: blur(3px);
+  z-index: 0;
+}
+
 .container-form {
   width: 285px;
   padding: 1.2em 1.5em;
   text-align: center;
   background-color: #1d2d44;
-  margin-top: 70px;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  z-index: 6;
 }
 
 .campo {
@@ -166,7 +181,9 @@ button.intput-registro {
 }
 
 .error {
-  color: red;
+  color: rgba(88, 155, 204, 0.8);
+  font-size: 1.1em;
+  font-family: "Open Sans", sans-serif;
 }
 
 button.intput-registro:hover {
