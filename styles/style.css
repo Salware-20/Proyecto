@@ -1,0 +1,60 @@
+/* =====> Importar fuentes <===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/* =====> Configuracion inicial de la pagina <===== */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* =====> Estilo para el menu <===== */
+.menu {
+    background-color: #1d2d44;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-family: "Playfair Display", serif;
+}
+
+.titulo a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.8s ease;
+    cursor: pointer;
+}
+
+.titulo a:hover{
+    text-shadow: 0px 15px 5px #90e0ef;
+    color: #90e0ef;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 65vh;
+    font-family: "Open Sans", sans-serif;
+    gap: 2em;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.8s ease;
+    cursor: pointer;
+}
+
+.links a:hover{
+    text-shadow: 0px 15px 5px #90e0ef;
+    color: #90e0ef;
+}
