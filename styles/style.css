@@ -148,17 +148,6 @@ body.login {
   cursor: pointer;
 }
 
-.campo input:focus::placeholder {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-#btn_login:hover {
-  background-color: #6c728470;
-  color: #7fc8f8;
-  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
-}
-
 /* =====> Estilo para el registro <===== */
 
 form.registro-form {
@@ -186,8 +175,156 @@ button.intput-registro {
   font-family: "Open Sans", sans-serif;
 }
 
+/* =====> Estilo para el panel admin <===== */
+.titulo_panel_admin {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.catalogo_adimin {
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid black;
+  position: relative;
+}
+
+.tabla_libros td,
+th {
+  border: 1px solid black;
+}
+
+.__fixed {
+  position: sticky;
+  z-index: 10;
+}
+
+.boton_agregar_libro {
+  width: fit-content;
+  margin: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.boton_agregar_libro button {
+  padding: 10px 20px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  border: none;
+  background-color: #1d2d44;
+  cursor: pointer;
+  z-index: 15;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+/* =====> Decoracion para el formulario de agregar libro <===== */
+
+#Abir_form_libro {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.formulario_agregar_libro {
+  width: max-content;
+  padding: 1.2em 1.5em;
+  background-color: #1d2d44;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  color: #7fc8f8;
+  position: absolute;
+  bottom: 0;
+  margin: 2.5rem;
+}
+
+.formulario_agregar_libro h2 {
+  margin: 1.3rem auto;
+  text-align: center;
+}
+
+.form_agregar_libro {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 0.5em;
+}
+
+.form_agregar_libro label input {
+  padding-right: 5px;
+  margin: 0.8em;
+  font-size: 1.1em;
+  margin: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form_agregar_libro input {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+}
+
+.form_agregar_libro .Estado {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form_agregar_libro #__btn_adimn {
+  margin: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  background-color: #7fc8f8;
+  color: #5e6681;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+/* =====> Hover y más <===== */
+
+.campo input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#btn_login:hover {
+  background-color: #6c728470;
+  color: #7fc8f8;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+}
+
 button.intput-registro:hover {
   background-color: #007bff;
   color: white;
   border: none;
+}
+
+.tabla_libros .__select:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.boton_agregar_libro button:hover {
+  background-color: #1d4443;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#Abir_form_libro:target {
+  visibility: visible;
+  opacity: 1;
 }
