@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php include 'menu.php'; ?>
+    <div class="fondo"></div>
     <h1 class="titulo_panel_admin">Area administrativa</h1>
     <div class="catalogo_adimin">
         <table class="tabla_libros">
@@ -40,7 +41,7 @@
                     <td><?php echo $libro['descripcion']; ?></td>
                     <td><?php echo $libro['anio']; ?></td>
                     <td><?php echo $libro['estado']; ?></td>
-                    <td><a href="#"><button>✏️</button></a><a href=""><button>🗑️</button></a></td> -->
+                    <td><div class="Buttons__select"><a href="#"><button>✏️</button></a><a href=""><button>🗑️</button></a></div></td> -->
                 </tr>
                 <tr class="__select">
                     <td>deyvid</td>
@@ -50,7 +51,7 @@
                     <td>TE QQUIERO MUCHO RABANITO TE QUIERE TU COMPA PESITO</td>
                     <td>2025</td>
                     <td>Disponible</td>
-                    <td><a href="#"><button>✏️</button></a><a href=""><button>🗑️</button></a></td>
+                    <td><div class="Buttons__select"><a href="#"><button>✏️</button></a><a href=""><button>🗑️</button></a></div></td>
                 </tr>
              </tbody>
         </table>

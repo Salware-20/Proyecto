@@ -192,6 +192,9 @@ button.intput-registro {
   font-family: "Open Sans", sans-serif;
   border: 2px solid black;
   position: relative;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .tabla_libros td,
@@ -224,6 +227,29 @@ th {
   transition: all 0.3s ease-in-out;
 }
 
+.tabla_libros .__select {
+  text-align: left;
+  transition: 0.5s ease;
+}
+
+.Buttons__select {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5em;
+  gap: 0.3em;
+}
+
+.Buttons__select button {
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  padding: 0.6em 1.2em;
+  background-color: #7fc8f86a;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
 /* =====> Decoracion para el formulario de agregar libro <===== */
 
 #Abir_form_libro {
@@ -294,6 +320,7 @@ th {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
+
 /* =====> Hover y más <===== */
 
 .campo input:focus::placeholder {
@@ -314,7 +341,7 @@ button.intput-registro:hover {
 }
 
 .tabla_libros .__select:hover {
-  background-color: black;
+  background-color: rgba(25, 25, 25, 0.5);
   color: white;
   cursor: pointer;
 }
@@ -327,4 +354,8 @@ button.intput-registro:hover {
 #Abir_form_libro:target {
   visibility: visible;
   opacity: 1;
+}
+
+.Buttons__select button:hover {
+  transform: translateY(-7px);
 }

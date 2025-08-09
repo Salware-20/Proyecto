@@ -55,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>login</title>
 </head>
 <body class="login">
-    <div class="fondo">
-        
-    </div>
+    <div class="fondo"></div>
     <?php include 'menu.php';?>
     <div class="container-form">
         <h1 class="titulo_login">Iniciar Sesión</h1>
