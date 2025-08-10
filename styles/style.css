@@ -86,7 +86,7 @@ body.login {
     fixed;
   background-size: cover;
   filter: blur(3px);
-  z-index: 0;
+  z-index: -1;
 }
 
 .container-form {
@@ -187,24 +187,19 @@ button.intput-registro {
 
 .catalogo_adimin {
   margin: auto;
-  width: 90%;
+  width: 100vh;
   padding: 10px;
   font-family: "Open Sans", sans-serif;
   border: 2px solid black;
   position: relative;
   border-radius: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(133, 133, 133, 0.65);
   color: white;
 }
 
 .tabla_libros td,
 th {
   border: 1px solid black;
-}
-
-.__fixed {
-  position: sticky;
-  z-index: 10;
 }
 
 .boton_agregar_libro {
@@ -250,6 +245,15 @@ th {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
+
+.__descripcion {
+  max-width: 333px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  vertical-align: top;
+}
+
 /* =====> Decoracion para el formulario de agregar libro <===== */
 
 #Abir_form_libro {
@@ -270,12 +274,28 @@ th {
   margin: 2.5rem;
 }
 
-.formulario_agregar_libro h2 {
-  margin: 1.3rem auto;
-  text-align: center;
+.form_editar_libro {
+  width: max-content;
+  padding: 1.2em 1.5em;
+  background-color: #1d2d44;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  color: #7fc8f8;
+  position: absolute;
+  bottom: 0;
+  right: 10rem;
+  margin: 2.5rem;
 }
 
-.form_agregar_libro {
+.formulario_agregar_libro h2,
+.form_editar_libro h2 {
+  margin: 1.3rem auto;
+  text-align: center;
+  color: #7fc8f8;
+}
+
+.form_agregar_libro,
+.form_editar_libro {
   color: white;
   display: flex;
   flex-direction: column;
@@ -283,7 +303,8 @@ th {
   gap: 0.5em;
 }
 
-.form_agregar_libro label input {
+.form_agregar_libro label,
+.form_editar_libro label {
   padding-right: 5px;
   margin: 0.8em;
   font-size: 1.1em;
@@ -291,7 +312,8 @@ th {
   font-family: "Open Sans", sans-serif;
 }
 
-.form_agregar_libro input {
+.form_agregar_libro input,
+.form_editar_libro input {
   padding: 5px;
   border: none;
   border-radius: 4px;
@@ -300,13 +322,15 @@ th {
   color: dimgray;
 }
 
-.form_agregar_libro .Estado {
+.form_agregar_libro .Estado,
+.form_editar_libro .Estado {
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
-.form_agregar_libro #__btn_adimn {
+.form_agregar_libro #__btn_adimn,
+.form_editar_libro #__btn_adimn {
   margin: 1rem;
   border: none;
   border-radius: 4px;
@@ -319,6 +343,17 @@ th {
   box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.descripcion_int {
+  width: 100%;
+  min-height: 50px;
+  resize: vertical;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* =====> Hover y más <===== */
