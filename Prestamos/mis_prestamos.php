@@ -27,7 +27,7 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Mis Préstamos</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
     <h1>Mis Préstamos</h1>

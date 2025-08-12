@@ -45,7 +45,7 @@ $generos = $conn->query("SELECT DISTINCT genero FROM library");
 <head>
     <meta charset="UTF-8">
     <title>Catálogo de Libros</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
     <h1>Catálogo de Libros</h1>

@@ -1,34 +1,34 @@
 CREATE DATABASE biblioteca;
 Use Biblioteca;
 
-    CREATE TABLE Library (
-        id_libro INT PRIMARY KEY AUTO_INCREMENT,
-        titulo VARCHAR(255) NOT NULL,
-        isbn VARCHAR(20),
-        id_autor INT,
-        id_editorial INT,
-        anio_publicacion INT,
-        genero VARCHAR(50),
-        FOREIGN KEY (id_autor) REFERENCES autores(id_autor),
-        FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial)
-    );
+CREATE TABLE Library (
+	id_libro INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(255) NOT NULL,
+	isbn VARCHAR(20),
+	id_autor INT,
+	id_editorial INT,
+	anio_publicacion INT,
+	genero VARCHAR(50),
+	FOREIGN KEY (id_autor) REFERENCES autores(id_autor),
+	FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial)
+);
     
     select * from Library;
     
     
-        CREATE TABLE autores (
-        id_autor INT PRIMARY KEY AUTO_INCREMENT,
-        nombre VARCHAR(255) NOT NULL,
-        nacionalidad VARCHAR(50)
-    );
+CREATE TABLE autores (
+	id_autor INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(255) NOT NULL,
+	nacionalidad VARCHAR(50)
+);
     
     select * from autores;
     
-        CREATE TABLE editoriales (
-        id_editorial INT PRIMARY KEY AUTO_INCREMENT,
-        nombre VARCHAR(255) NOT NULL,
-        ciudad VARCHAR(100)
-    );
+CREATE TABLE editoriales (
+	id_editorial INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(255) NOT NULL,
+	ciudad VARCHAR(100)
+);
     
     select * from editoriales;
     
@@ -41,7 +41,7 @@ Use Biblioteca;
     );
     
     
-    INSERT INTO libros (titulo, isbn, id_autor, id_editorial, anio_publicacion, genero) VALUES
+    INSERT INTO Library (titulo, isbn, id_autor, id_editorial, anio_publicacion, genero) VALUES
 ('El Quijote', '978-84-206-5697-2', 1, 1, 1605, 'Novela'),
 ('Cien años de soledad', '978-03-217-2597-7', 2, 2, 1967, 'Realismo mágico');
 
