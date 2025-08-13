@@ -1,0 +1,396 @@
+/* =====> Importar fuentes <===== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* =====> Configuracion inicial de las paginas <===== */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.registro {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  background: #b1b1b1;
+  background-image: url("../imagenes/Biblioteca.jpg");
+  background-size: cover;
+}
+
+body.login {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =====> Estilo para el menu <===== */
+.menu {
+  background-color: #1d2d44;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-family: "Playfair Display", serif;
+  z-index: 5;
+}
+
+.titulo a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.titulo a:hover {
+  text-shadow: 0px 15px 5px #90e0ef;
+  color: #90e0ef;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  width: 65vh;
+  font-family: "Open Sans", sans-serif;
+  gap: 2em;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.links a:hover {
+  text-shadow: 0px 15px 5px #90e0ef;
+  color: #90e0ef;
+}
+
+/* =====> Estilo para el login <===== */
+.fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("../imagenes/Libros-estantes.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+.container-form {
+  width: 285px;
+  padding: 1.2em 1.5em;
+  text-align: center;
+  background-color: #1d2d44;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  z-index: 6;
+}
+
+.campo {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  background-color: #111b29;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+.input-icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: #7fc8f8;
+}
+
+#email,
+#password {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+.titulo_login {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #d3d3d3;
+  font-family: "Playfair Display", serif;
+}
+
+#btn_login {
+  margin: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  background-color: #7fc8f8;
+  color: #5e6681;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* =====> Estilo para el registro <===== */
+
+form.registro-form {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 300px;
+  background: #bfbfbf;
+  font-family: "Open Sans", sans-serif;
+}
+
+input.intput-registro,
+button.intput-registro {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  cursor: pointer;
+}
+
+.error {
+  color: rgba(88, 155, 204, 0.8);
+  font-size: 1.1em;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* =====> Estilo para el panel admin <===== */
+.titulo_panel_admin {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.catalogo_adimin {
+  margin: auto;
+  width: 100vh;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid black;
+  position: relative;
+  border-radius: 1rem;
+  background-color: rgba(133, 133, 133, 0.65);
+  color: white;
+}
+
+.tabla_libros td,
+th {
+  border: 1px solid black;
+}
+
+.boton_agregar_libro {
+  width: fit-content;
+  margin: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.boton_agregar_libro button {
+  padding: 10px 20px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  border: none;
+  background-color: #1d2d44;
+  cursor: pointer;
+  z-index: 15;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.tabla_libros .__select {
+  text-align: left;
+  transition: 0.5s ease;
+}
+
+.Buttons__select {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.5em;
+  gap: 0.3em;
+}
+
+.Buttons__select button {
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  padding: 0.6em 1.2em;
+  background-color: #7fc8f86a;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.__descripcion {
+  max-width: 333px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  vertical-align: top;
+}
+
+/* =====> Decoracion para el formulario de agregar libro <===== */
+
+#Abir_form_libro {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.formulario_agregar_libro {
+  width: max-content;
+  padding: 1.2em 1.5em;
+  background-color: #1d2d44;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  color: #7fc8f8;
+  position: absolute;
+  bottom: 0;
+  margin: 2.5rem;
+}
+
+.form_editar_libro {
+  width: max-content;
+  padding: 1.2em 1.5em;
+  background-color: #1d2d44;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px 0 rgb(16, 16, 16);
+  color: #7fc8f8;
+  position: absolute;
+  bottom: 0;
+  right: 10rem;
+  margin: 2.5rem;
+}
+
+.formulario_agregar_libro h2,
+.form_editar_libro h2 {
+  margin: 1.3rem auto;
+  text-align: center;
+  color: #7fc8f8;
+}
+
+.form_agregar_libro,
+.form_editar_libro {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 0.5em;
+}
+
+.form_agregar_libro label,
+.form_editar_libro label {
+  padding-right: 5px;
+  margin: 0.8em;
+  font-size: 1.1em;
+  margin: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.form_agregar_libro input,
+.form_editar_libro input {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+}
+
+.form_agregar_libro .Estado,
+.form_editar_libro .Estado {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form_agregar_libro #__btn_adimn,
+.form_editar_libro #__btn_adimn {
+  margin: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  background-color: #7fc8f8;
+  color: #5e6681;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.descripcion_int {
+  width: 100%;
+  min-height: 50px;
+  resize: vertical;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  outline: none;
+  color: dimgray;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* =====> Hover y más <===== */
+
+.campo input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#btn_login:hover {
+  background-color: #6c728470;
+  color: #7fc8f8;
+  box-shadow: 0 8px 24px 0 rgba(255, 234, 167, 0.2);
+}
+
+button.intput-registro:hover {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.tabla_libros .__select:hover {
+  background-color: rgba(25, 25, 25, 0.5);
+  color: white;
+  cursor: pointer;
+}
+
+.boton_agregar_libro button:hover {
+  background-color: #1d4443;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#Abir_form_libro:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Buttons__select button:hover {
+  transform: translateY(-7px);
+}
