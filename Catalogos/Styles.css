@@ -1,83 +1,86 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .filtros {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.filtros input, .filtros select, .filtros button {
-    padding: 8px;
-    margin: 5px;
+.filtros input,
+.filtros select,
+.filtros button {
+  padding: 8px;
+  margin: 5px;
 }
 
 table {
-    width: 90%;
-    margin: auto;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
 }
 
 th {
-    background-color: #333;
-    color: white;
+  background-color: #333;
+  color: white;
 }
 
 .img-libro {
-    width: 70px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .hover-text:hover {
-    color: blue;
-    font-weight: bold;
-    cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .disponible {
-    background-color: green;
-    color: white;
-    font-weight: bold;
+  background-color: green;
+  color: white;
+  font-weight: bold;
 }
 
 .no-disponible {
-    background-color: red;
-    color: white;
-    font-weight: bold;
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
 
 .btn-detalles {
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .btn-detalles:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .no-resultados {
-    text-align: center;
-    font-size: 18px;
-    color: red;
-    margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  margin-top: 20px;
 }

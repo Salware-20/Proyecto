@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
            
             $hash = password_hash($clave, PASSWORD_DEFAULT);
-            $insertar = $conexion("INSERT INTO usuarios (nombre, apellido, correo, password)");
+            $insertar = $conexion("INSERT INTO usuarios (nombre, apellido, correo, clave)");
             $insertar( $nombre, $apellido, $correo, $hash);
 
             if ($insertar->execute()) {

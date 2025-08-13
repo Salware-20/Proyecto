@@ -16,30 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $correo = $_POST["correo"] ?? '';
     $clave = $_POST["clave"] ?? '';
 
-    $sql = "SELECT * FROM usuarios WHERE correo = ?";
+    $sql = "SELECT * FROM usuarios WHERE correo = ? AND clave = ?";
 
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("s", $correo);
+    $stmt->bind_param("ss", $correo, $clave);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    if($resultado->num_rows === 1){
+    if($resultado->num_rows > 0){
         $usuario = $resultado->fetch_assoc();
-        if (password_verify($clave, $usuario['clave'])) {
-            $_SESSION['usuario'] = $usuario['correo'];
-            $_SESSION['rol'] = $usuario['rol'];
-
-            if ($usuario['rol'] === 'admin') {
-                header("Location: admin.php");
-            } elseif ($usuario['rol'] === 'usuario') {
-                header("Location: usuario.php");
-            }
-            exit();
+        if ($usuario['Administrador'] == 1) {
+            header("Location: panel_admin.php");
         } else {
-            $error = "Contraseña incorrecta.";
+            header("Location: Catalogos/catalogo.php");
         }
+        exit();
     } else {
-        $error = "Correo no registrado.";
+        $error = "Correo o contraseña incorrectos.";
     }
 }
 ?>
