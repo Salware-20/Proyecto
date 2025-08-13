@@ -41,7 +41,7 @@ if (isset($_GET['delete'])) { // Codigo para eliminar un libro
 
 $libroEditar = null;
 
-if (isset($_GET['edit'])) {
+if (isset($_GET['edit'])) { // Codigo para editar un libro
     $idEditar = (int)$_GET['edit'];
     $sqlEditar = "SELECT * FROM libros WHERE id_libro = $idEditar";
     $resEditar = mysqli_query($conexion, $sqlEditar);
