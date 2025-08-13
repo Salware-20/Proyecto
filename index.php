@@ -12,7 +12,7 @@ include 'conexion.php';
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="estilos.css">
     <title>Digital Universe</title>
-    <link rel="shortcut icon" href="Imagenes/Icono.png" type="image/jpg">
+    <link rel="shortcut icon" href="Imagenes/icono.png" type="image/jpg">
 </head>
 <body>
 

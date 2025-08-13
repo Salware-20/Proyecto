@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "root"; // Cambia según tu configuración
-$pass = "";     // Cambia según tu configuración
+$user = "root"; 
+$pass = "";     
 $basedatos   = "prestamos";
 
 $conn = new mysqli($host, $user, $pass, $basedatos);

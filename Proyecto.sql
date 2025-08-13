@@ -7,8 +7,7 @@ CREATE TABLE usuarios (
     apellido VARCHAR(50) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     clave VARCHAR(255) NOT NULL,
-    Administrador boolean not null default 0
-    
+    Administrador boolean not null default 0  
 );
 
 INSERT INTO usuarios (nombre, apellido, correo, clave, Administrador) VALUES ('El', 'Administrator', 'El.Administrator@example.com', 'clave', 1);
