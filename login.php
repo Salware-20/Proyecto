@@ -1,10 +1,5 @@
 <?php 
-$host = "localhost";
-$usuario = "root";
-$contrasena = "";
-$basededatos = "biblioteca";
-
-$conexion = new mysqli($host, $usuario, $contrasena, $basededatos);
+include 'conexion.php';
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
