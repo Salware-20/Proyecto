@@ -20,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if($resultado->num_rows > 0){
         $usuario = $resultado->fetch_assoc();
+        $_SESSION['nombre']       = $usuario['nombre'];  
+        $_SESSION['correo']       = $usuario['correo'];
         if ($usuario['Administrador'] == 1) {
             header("Location: panel_admin.php");
         } else {

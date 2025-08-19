@@ -1,7 +1,12 @@
 <?php
 session_start(); 
 include 'menu.php';
-include 'conexion.php'; 
+include 'conexion.php';
+
+// 1) Testeo la conexión al arrancar
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,25 +25,26 @@ include 'conexion.php';
     <img src="Imagenes/fondoindex.png" alt="Fondo" class="imagen-fondo">
 
     <div class="Texto">
-        <?php if (isset($_SESSION['usuario'])): ?>
-            <h1>Bienvenido <?= htmlspecialchars($_SESSION['usuario']) ?> a la Biblioteca Digital Universe</h1>
-        <?php else: ?>
-            <h1>Bienvenidos a la Biblioteca Digital Universe</h1>
-            <p>“Nuestra biblioteca digital permite a lectores y administradores gestionar libros, realizar préstamos y acceder a una amplia colección de títulos desde cualquier dispositivo.</p>
-        <?php endif; ?>
-    </div>
-</div>
+          <?php if (isset($_SESSION['nombre'])): ?>
+        <h1>Hola <?= htmlspecialchars($_SESSION['nombre'], ENT_QUOTES, 'UTF-8') ?>, bienvenido de nuevo</h1>
 
-<div class="gallery-container">
-    <?php if (isset($_SESSION['usuario'])): ?>
-        <div class="gallery">
+        <div class="gallery-container">
+            
+            <div class="gallery">
             <a target="_blank" href="catalogo.php">
                 <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
             </a>
             <div class="desc">Ver catálogos de libros</div>
+        
+    
         </div>
-        <!-- Puedes agregar más opciones aquí según el rol -->
-    <?php else: ?>
+
+
+      <?php else: ?>
+        <h1>Bienvenidos a la Biblioteca Digital Universe</h1>
+        <p> Nuestra biblioteca digital permite a lectores y administradores gestionar libros, realizar préstamos y acceder a una amplia colección de títulos desde cualquier dispositivo. </p>
+
+        <div class="gallery-container">
         <div class="gallery">
             <a target="_blank" href="login.php">
                 <img src="Imagenes/login.png" alt="Iniciar sesión">
@@ -59,8 +65,13 @@ include 'conexion.php';
             </a>
             <div class="desc">Ver catálogos de libros</div>
         </div>
-    <?php endif; ?>
 </div>
+      <?php endif; ?>
+    </div>
+    </div>
+</div>
+
+
 
 </body>
 </html>
