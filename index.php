@@ -16,8 +16,8 @@ if ($conexion->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/Estilos.css">
-    <title>Digital Universe</title>
     <link rel="shortcut icon" href="Imagenes/icono.png" type="image/jpg">
+    <title>Digital Universe</title>
 </head>
 <body>
 
@@ -31,7 +31,7 @@ if ($conexion->connect_error) {
         <div class="gallery-container">
             
             <div class="gallery">
-            <a target="_blank" href="catalogo.php">
+            <a target="_blank" href="Catalogos/catalogo.php">
                 <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
             </a>
             <div class="desc">Ver catálogos de libros</div>
