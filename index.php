@@ -10,7 +10,7 @@ include 'conexion.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles/Estilos.css">
     <title>Digital Universe</title>
     <link rel="shortcut icon" href="Imagenes/icono.png" type="image/jpg">
 </head>

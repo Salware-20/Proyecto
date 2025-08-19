@@ -13,6 +13,6 @@ estado boolean not null default 0
 
 select * from libros;
 
-INSERT INTO libros (titulo, autor, isbn, categoria, descripcion, anio, estado) VALUES (Prueba, prueba, prueba, prueba, prueba, prueba, prueba);
+
 
 
