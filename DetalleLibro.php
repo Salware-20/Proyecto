@@ -13,40 +13,54 @@ $libro = mysqli_fetch_assoc($result);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles/Estilos.css">
 <link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/Estilos.css">
 <title>Detalle Libro</title>
 <link rel="shortcut icon" href="Imagenes/icono.png" type="image/jpg">
 </head>
-<body>
     <?php include 'menu.php'; ?>
-<div class="container">
-    <img src="imagenes/Libros-estantes.jpg" alt="Fondo" class="imagen-fondo">
+
+
+<div>
+    <img src="Imagenes/Libros-estantes.jpg" alt="Fondo" class="imagen-fondo">
 
     <div class="Texto">
-    
-    <h1>Detalles del Libro</h1>
-    <table>
-        <tr>
-        <td>
-            <img src="Imagenes/Libros-estantes.jp" alt="Portada del libro" class="imagen-fondo">
-        </td>
-        <td>
-            <form>
-            <input type="text" value="<?= htmlspecialchars($libro['id_libro']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['titulo']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['autor']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['isbn']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['categoria']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['anio']) ?>" disabled><br>
-            <input type="text" value="<?= htmlspecialchars($libro['descripcion']) ?>" disabled><br>
-            <input type="text" value="<?= ($libro['estado'] == 1 ? 'Disponible' : 'No disponible') ?>" disabled><br>
-            <button type="button">Acción</button>
-            </form>
-        </td>
-        </tr>
-    </table>
+        <div class="book-details">
+      <div class="book-image">
+        <img src="Imagenes/PortadaLibro.jpg" alt="Portada del libro">
+      </div>
+      <div class="details">
+        <h2>Detalles del Libro</h2>
+        <table>
+          <tr>
+            <th>Título:</th>
+            <td><?= htmlspecialchars($libro['titulo']) ?></td>
+          </tr>
+          <tr>
+            <th>Autor:</th>
+            <td><?= htmlspecialchars($libro['autor']) ?></td>
+          </tr>
+          <tr>
+            <th>ISBN:</th>
+            <td><?= htmlspecialchars($libro['isbn']) ?></td>
+          </tr>
+          <tr>
+            <th>Categoría:</th>
+            <td><?= htmlspecialchars($libro['categoria']) ?></td>
+          </tr>
+          <tr>
+            <th>Año:</th>
+            <td><?= htmlspecialchars($libro['anio']) ?></td>
+          </tr>
+          <tr>
+            <th>Descripción:</th>
+            <td><?= htmlspecialchars($libro['descripcion']) ?></td>
+          </tr>
+        </table>
+      </div>
     </div>
-</div>
+    </div>
+</div> 
+
 </body>
 </html>
