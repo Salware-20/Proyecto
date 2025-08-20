@@ -1,12 +1,11 @@
-
 <?php
 include "conexion.php";
 
-// Búsqueda y filtro
+// Búsqueda y filtro //
 $buscar = $_GET['buscar'] ?? '';
 $genero = $_GET['genero'] ?? '';
 
-// Consulta principal usando la tabla 'libros'
+// Consulta principal usando la tabla 'libros' //
 $sql = "SELECT id_libro, titulo, autor, categoria AS genero, estado, anio FROM libros WHERE 1";
 $params = [];
 $types = "";
@@ -32,7 +31,7 @@ if (!empty($params)) {
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Lista de géneros para el filtro
+// Lista de géneros para el filtro //
 $generos = $conexion->query("SELECT DISTINCT categoria FROM libros");
 ?>
 <!DOCTYPE html>
@@ -71,7 +70,7 @@ $generos = $conexion->query("SELECT DISTINCT categoria FROM libros");
                     <th>Autor</th>
                     <th>Género</th>
                     <th>Estado</th>
-                    <th>Detalles</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,7 +84,10 @@ $generos = $conexion->query("SELECT DISTINCT categoria FROM libros");
                         <td><?= htmlspecialchars($row['autor']) ?></td>
                         <td><?= htmlspecialchars($row['genero']) ?></td>
                         <td class="<?= $estadoClass ?>"><?= $estadoTexto ?></td>
-                        <td><a href="DetalleLibro.php?id=<?= $row['id_libro'] ?>" class="btn-detalles">Ver detalles</a></td>
+                        <td>
+                            <!-- 🔹 Botón Ver Detalles -->
+                            <a href="DetalleLibro.php?id=<?= $row['id_libro'] ?>" class="btn-detalles">Ver Detalles</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
