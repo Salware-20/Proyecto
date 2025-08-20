@@ -5,7 +5,7 @@
         <!-- ==> Lista de los links de redireccionamiento <== -->
         <li><a href="index.php">Inicio</a></li>
         <li><a href="login.php">Catalogo</a></li>
-        <li><a href="Prestamos/mis_prestamos.php">Préstamos</a></li>
+        <li><a href="mis_prestamos.php">Préstamos</a></li>
         <li><a href="login.php">Panel Admin</a></li>
         <li><a href="registro.php">Registrarse</a></li>
     </ul>
