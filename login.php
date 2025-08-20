@@ -1,10 +1,11 @@
 <?php 
+// verifica si el servidor de base de datos esta conectado
 include 'conexion.php';
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
-
+// verificar si el usuario ya ha iniciado sesión
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $clave = $_POST["clave"] ?? '';
 
     $sql = "SELECT * FROM usuarios WHERE correo = ? AND clave = ?";
-
+    // Selecciona los usuarios que coincidan con el correo y la contraseña
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("ss", $correo, $clave);
     $stmt->execute();
@@ -49,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="fondo"></div>
     <?php include 'menu.php';?>
     <div class="container-form">
+        <!-- Formulario para inicio de sección -->
         <h1 class="titulo_login">Iniciar Sesión</h1>
             <form action="login.php" method="post">
                 <div class="campo">

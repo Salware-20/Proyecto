@@ -50,7 +50,9 @@ if (isset($_GET['edit'])) { // Codigo para editar un libro
     }
 }
 
+// Codigo para actualizar un libro
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // verificar si se toco el boton de editar
     if (isset($_POST['id_libro'])) {
         $idLibro = (int)$_POST['id_libro'];
         $titulo = $_POST['titulo'] ?? '';
@@ -60,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $descripcion = $_POST['descripcion'] ?? '';
         $anio = $_POST['anio'] ?? '';
         $estado = isset($_POST['estado']) ? 1 : 0;
-
-        $sqlActualizar = "UPDATE libros SET titulo = '$titulo', autor = '$autor', isbn = '$isbn', categoria = '$categoria', descripcion = '$descripcion', anio = '$anio', estado = $estado WHERE id_libro = $idLibro";
+        // Actualizar el libro en la base de datos
+        $sqlActualizar = "UPDATE libros SET titulo = '$titulo', autor = '$autor', isbn = '$isbn', categoria = '$categoria', descripcion = '$descripcion', anio = '$anio', estado = $estado WHERE id_libro = $idLibro"; 
 
         if (mysqli_query($conexion, $sqlActualizar)) {
             $mensaje = "Libro actualizado correctamente.";
@@ -152,8 +154,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="checkbox" name="estado" class="Estado">¿Disponible? 
             <input type="submit" value="Registrar Libro" id="__btn_adimn">
         </form>
-    </div>
+    </div> 
     <div class="formulario_editar">
+        <!-- Apartado que muestra cada libro agregado en la base de datos -->
         <form action="panel_admin.php" method="post" class="form_editar_libro">
             <h2>Editar Información</h2>
             <?php if ($libroEditar): ?>
