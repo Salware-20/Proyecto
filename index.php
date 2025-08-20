@@ -21,55 +21,38 @@ if ($conexion->connect_error) {
 </head>
 <body>
 
-<div class="Container">
-    <img src="Imagenes/fondoindex.png" alt="Fondo" class="imagen-fondo">
+/div>
+            </div>
 
-    <div class="Texto">
-          <?php if (isset($_SESSION['nombre'])): ?>
-        <h1>Hola <?= htmlspecialchars($_SESSION['nombre'], ENT_QUOTES, 'UTF-8') ?>, bienvenido de nuevo</h1>
+        <?php else: ?>
+            <h1>Bienvenidos a la Biblioteca Digital Universe</h1>
+            <p>Nuestra biblioteca digital permite a lectores y administradores gestionar libros, realizar préstamos y acceder a una amplia colección de títulos desde cualquier dispositivo.</p>
 
-        <div class="gallery-container">
-            
-            <div class="gallery">
-            <a target="_blank" href="Catalogos/catalogo.php">
-                <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
-            </a>
-            <div class="desc">Ver catálogos de libros</div>
-        
-    
-        </div>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <a target="_blank" href="login.php">
+                        <img src="Imagenes/login.png" alt="Iniciar sesión">
+                    </a>
+                    <div class="desc">Iniciar sesión</div>
+                </div>
 
+                <div class="gallery">
+                    <a target="_blank" href="registro.php">
+                        <img src="Imagenes/registrarse.jpg" alt="Registrarse">
+                    </a>
+                    <div class="desc">Registrarse</div>
+                </div>
 
-      <?php else: ?>
-        <h1>Bienvenidos a la Biblioteca Digital Universe</h1>
-        <p> Nuestra biblioteca digital permite a lectores y administradores gestionar libros, realizar préstamos y acceder a una amplia colección de títulos desde cualquier dispositivo. </p>
-
-        <div class="gallery-container">
-        <div class="gallery">
-            <a target="_blank" href="login.php">
-                <img src="Imagenes/login.png" alt="Iniciar sesión">
-            </a>
-            <div class="desc">Iniciar sesión</div>
-        </div>
-
-        <div class="gallery">
-            <a target="_blank" href="registro.php">
-                <img src="Imagenes/registrarse.png" alt="Registrarse">
-            </a>
-            <div class="desc">Registrarse</div>
-        </div>
-
-        <div class="gallery">
-            <a target="_blank" href="catalogo.php">
-                <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
-            </a>
-            <div class="desc">Ver catálogos de libros</div>
-        </div>
-</div>
-      <?php endif; ?>
+                <div class="gallery">
+                    <a target="_blank" href="catalogo.php">
+                        <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
+                    </a>
+                    <div class="desc">Ver catálogos de libros</div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
-    </div>
-</div>
+</div> 
 
 
 
