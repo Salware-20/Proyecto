@@ -21,7 +21,27 @@ if ($conexion->connect_error) {
 </head>
 <body>
 
-/div>
+<div class="Container">
+    <img src="Imagenes/fondoindex.png" alt="Fondo" class="imagen-fondo">
+
+    <div class="Texto">
+        <?php if (isset($_SESSION['nombre'])): ?>
+            <h1>Hola <?= htmlspecialchars($_SESSION['nombre'], ENT_QUOTES, 'UTF-8') ?>, bienvenido de nuevo</h1>
+
+            <div class="gallery-container">
+                <div class="gallery">
+                    <a target="_blank" href="catalogo.php">
+                        <img src="Imagenes/catalogo.png" alt="Ver catálogos de libros">
+                    </a>
+                    <div class="desc">Ver catálogos de libros</div>
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="mis_prestamos.php">
+                        <img src="Imagenes/prestamo.jpg" alt="Ver préstamos de libros">
+                    </a>
+                    <div class="desc">Ver mis préstamos</div>
+                </div>
             </div>
 
         <?php else: ?>
@@ -53,7 +73,6 @@ if ($conexion->connect_error) {
         <?php endif; ?>
     </div>
 </div> 
-
 
 
 </body>
