@@ -1,61 +1,85 @@
 <?php
-session_start();
 include "conexion.php";
 
-// Simulación de sesión //
-if (!isset($_SESSION['id_usuario'])) {
-    $_SESSION['id_usuario'] = 1;
+// Búsqueda y filtro //
+$buscar = $_GET['buscar'] ?? '';
+$genero = $_GET['genero'] ?? '';
+
+
+// Consulta principal usando la tabla 'libros' //
+$sql = "SELECT id_libro, titulo, autor, categoria AS genero, estado, anio FROM libros WHERE 1";
+$params = [];
+$types = "";
+
+if (!empty($buscar)) {
+    $sql .= " AND (titulo LIKE ? OR autor LIKE ?)";
+    $like = "%$buscar%";
+    $params[] = &$like;
+    $params[] = &$like;
+    $types .= "ss";
 }
 
-$id_usuario = $_SESSION['id_usuario'];
-$id_libro = $_GET['id'] ?? 0;
+if (!empty($genero)) {
+    $sql .= " AND categoria = ?";
+    $params[] = &$genero;
+    $types .= "s";
+}
 
-// Obtener datos del libro //
-$sql = "SELECT * FROM Libros WHERE id_libro = ?";
 $stmt = $conexion->prepare($sql);
-$stmt->bind_param("i", $id_libro);
+if (!empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
 $stmt->execute();
 $result = $stmt->get_result();
-$libro = $result->fetch_assoc();
 
-// Procesar préstamo //
-if (isset($_POST['prestar']) && $libro['disponible'] == 1) {
-    $fecha = date("Y-m-d");
-    $sqlInsert = "INSERT INTO Prestamos (id_usuario, id_libro, fecha_prestamo) VALUES (?, ?, ?)";
-    $stmt2 = $conn->prepare($sqlInsert);
-    $stmt2->bind_param("iis", $id_usuario, $id_libro, $fecha);
-    $stmt2->execute();
-
-    // Actualizar estado del libro //
-    $sqlUpdate = "UPDATE Libros SET disponible = 0 WHERE id_libro = ?";
-    $stmt3 = $conn->prepare($sqlUpdate);
-    $stmt3->bind_param("i", $id_libro);
-    $stmt3->execute();
-
-    header("Location: mis_prestamos.php"); // Redirigir a préstamos //
-    exit;
-}
+// Lista de géneros para el filtro //
+$generos = $conexion->query("SELECT DISTINCT categoria FROM libros WHERE estado != 1");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle del Libro</title>
+    <title>Catálogo de Libros</title>
+    <link rel="stylesheet" href="styles/Styles_catalogo.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1><?= htmlspecialchars($libro['titulo']) ?></h1>
-    <p><strong>Género:</strong> <?= htmlspecialchars($libro['genero']) ?></p>
-    <p><strong>Estado:</strong> <?= $libro['disponible'] ? "Disponible" : "Prestado" ?></p>
 
-    <?php if ($libro['disponible']): ?>
-        <form method="POST">
-            <button type="submit" name="prestar">Prestar libro</button>
-        </form>
+    <?php include 'menu.php'; ?>
+    <h1>Catálogo de Libros</h1>
+
+
+    <?php if ($result->num_rows > 0): ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while($row = $result->fetch_assoc()):
+                    $estadoTexto = ($row['estado'] == 1) ? "Disponible" : "No disponible";
+                    $estadoClass = ($row['estado'] == 1) ? "disponible" : "no-disponible";
+                ?>
+                    <tr>
+                        <td class="hover-text"><?= htmlspecialchars($row['titulo']) ?></td>
+                        <td><?= htmlspecialchars($row['autor']) ?></td>
+                        <td><?= htmlspecialchars($row['genero']) ?></td>
+                        <td class="<?= $estadoClass ?>"><?= $estadoTexto ?></td>
+                        <td>
+                            <a href="DetalleLibro.php?id=<?= $row['id_libro'] ?>" class="btn-detalles">Ver Detalles</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
     <?php else: ?>
-        <p>Este libro ya está prestado.</p>
+        <p class="no-resultados">No se encontraron libros.</p>
     <?php endif; ?>
 
-    <p><a href="catalogo.php">Volver al catálogo</a></p>
 </body>
 </html>
-
