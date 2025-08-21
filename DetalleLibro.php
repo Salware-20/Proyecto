@@ -6,6 +6,11 @@ $id_libro = (int)$_GET['id'];
 
 $result = mysqli_query($conexion, "SELECT id_libro, titulo, autor, isbn, categoria, anio, descripcion, estado FROM libros WHERE id_libro = $id_libro");
 $libro = mysqli_fetch_assoc($result);
+if ($libro['estado'] == 1) {
+  $btn = '<button id="btn_login">Tomar prestado</button>';
+} else {
+  $btn = '<button id="btn_login" disabled>Libro no disponible</button>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +60,11 @@ $libro = mysqli_fetch_assoc($result);
           <tr>
             <th>Descripción:</th>
             <td><?= htmlspecialchars($libro['descripcion']) ?></td>
+          </tr>
+          <tr>
+            <td>
+              <?php echo $btn ?>
+            </td>
           </tr>
         </table>
       </div>

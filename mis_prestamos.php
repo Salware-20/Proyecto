@@ -12,7 +12,7 @@ $id_libro = $_GET['id'] ?? 0;
 
 // Obtener datos del libro //
 $sql = "SELECT * FROM Libros WHERE id_libro = ?";
-$stmt = $conn->prepare($sql);
+$stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $id_libro);
 $stmt->execute();
 $result = $stmt->get_result();

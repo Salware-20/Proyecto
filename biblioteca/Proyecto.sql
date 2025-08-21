@@ -53,7 +53,7 @@ CREATE TABLE Prestamos (
     fecha_prestamo DATE,
     fecha_devolucion DATE,
     FOREIGN KEY (id_libro) REFERENCES Libros(id_libro),
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id)
 );
 
 Select * from Prestamos;
